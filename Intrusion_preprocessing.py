@@ -21,7 +21,7 @@ testing_set = pd.read_csv('Network Intrusion Detection- UNSW_NB15 training and t
                           sep=",")
 
 columns = training_data.columns
-attacks = training_data.query("label > 0") 
+attacks = training_data.query("label == 1") 
 training_full = training_data.dropna()
 
 
@@ -61,3 +61,5 @@ scores.index = pd.RangeIndex(start=1, stop=len(scores)+1, step=1)
 print("Top 15 Features: ")
 print(scores)
 
+#print("Altered dataset: ")
+#print(altered_training)
